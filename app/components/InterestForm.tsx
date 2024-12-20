@@ -21,7 +21,7 @@ export default function InterestForm() {
     e.preventDefault()
     setLoading(true) // Disable the button
     try {
-      const response = await fetch('https://formsubmit.co/sourav@filterpixel.com', {
+      const response = await fetch('https://formsubmit.co/7b3455a6da4a99454bfdc2c3679155e0', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
