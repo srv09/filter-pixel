@@ -15,12 +15,32 @@ export default function InterestForm() {
     setFormData(prevState => ({ ...prevState, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false) // State to handle button disable
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here (e.g., send data to an API)
-    console.log(formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', company: '', message: '' })
+    setLoading(true) // Disable the button
+    try {
+      const response = await fetch('https://formsubmit.co/sourav@filterpixel.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        console.log('Form submitted successfully:', response);
+        // Reset form after successful submission
+        setFormData({ name: '', email: '', company: '', message: '' })
+      } else {
+        throw new Error("Error in submitting the form");
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false) // Re-enable the button
+    }
   }
 
   return (
@@ -76,9 +96,17 @@ export default function InterestForm() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
               ></textarea>
             </div>
-            <button type="submit" className="btn-primary w-full">
-              Submit
-            </button>
+            <div className="w-full flex flex-row justify-center">
+            <button
+                type="submit"
+                className={`btn-primary bg-primary text-white px-2 py-1 hover:bg-opacity-80 transition duration-200 ${
+                  loading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={loading} // Disable the button
+              >
+                {loading ? 'Please wait' : 'Submit'}
+              </button>
+            </div>
           </form>
         </div>
       </div>
