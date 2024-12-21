@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { FilloutStandardEmbed } from "@fillout/react";
+import "@fillout/react/style.css"
 
 export default function InterestForm() {
   const [formData, setFormData] = useState({
@@ -48,66 +50,10 @@ export default function InterestForm() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Get Started with FilterPixel</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block mb-2 text-gray-700">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block mb-2 text-gray-700">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="company" className="block mb-2 text-gray-700">Company</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block mb-2 text-gray-700">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-              ></textarea>
-            </div>
-            <div className="w-full flex flex-row justify-center">
-            <button
-                type="submit"
-                className={`btn-primary bg-primary text-white px-2 py-1 hover:bg-opacity-80 transition duration-200 ${
-                  loading ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
-                disabled={loading} // Disable the button
-              >
-                {loading ? 'Please wait' : 'Submit'}
-              </button>
-            </div>
-          </form>
+          <div style={{width: '100%', height: '100%'}}>
+
+            <FilloutStandardEmbed filloutId='1QghLf2isZus' inheritParameters dynamicResize/>
+          </div>
         </div>
       </div>
     </section>
