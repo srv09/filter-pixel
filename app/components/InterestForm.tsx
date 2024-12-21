@@ -47,15 +47,14 @@ export default function InterestForm() {
 
   return (
     <section id="interest-form" className="py-16 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Get Started with FilterPixel</h2>
+      {/* <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg"> */}
           <div style={{width: '100%', height: '100%'}}>
 
             <FilloutStandardEmbed filloutId='1QghLf2isZus' inheritParameters dynamicResize/>
           </div>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </section>
   )
 }
