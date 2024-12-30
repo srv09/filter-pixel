@@ -7,10 +7,10 @@ export default function Pricing() {
   const [activeTab, setActiveTab] = useState('standard')
 
   const standardTiers = [
-    { name: "1 - 5 Events", price: "40,000 INR", discount: "No Discount" },
-    { name: "6 - 15 Events", price: "36,000 INR", discount: "10% Discount" },
-    { name: "16 - 30 Events", price: "34,000 INR", discount: "15% Discount" },
-    { name: "31+ Events", price: "32,000 INR", discount: "20% Discount" }
+    { name: "1 - 5 Events", price: "40,000 INR/event", discount: "No Discount" },
+    { name: "6 - 15 Events", price: "36,000 INR/event", discount: "10% Discount" },
+    { name: "16 - 30 Events", price: "34,000 INR/event", discount: "15% Discount" },
+    { name: "31+ Events", price: "32,000 INR/event", discount: "20% Discount" }
   ]
 
   const enterpriseTiers = [
@@ -40,7 +40,7 @@ export default function Pricing() {
         {activeTab === 'standard' ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {standardTiers.map((tier, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover-scale animate-fadeIn">
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover-scale">
                 <h3 className="text-lg font-semibold mb-2 text-primary">{tier.name}</h3>
                 <p className="text-2xl font-bold mb-2 text-gray-800">{tier.price}</p>
                 <p className="text-sm text-accent">{tier.discount}</p>
@@ -50,7 +50,7 @@ export default function Pricing() {
         ) : (
           <div className="grid md:grid-cols-3 gap-4">
             {enterpriseTiers.map((tier, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover-scale animate-fadeIn">
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover-scale">
                 <h4 className="text-lg font-semibold mb-2 text-primary">{tier.name}</h4>
                 <p className="text-2xl font-bold mb-2 text-gray-800">{tier.price}</p>
                 <p className="text-sm text-gray-600">{tier.description}</p>
