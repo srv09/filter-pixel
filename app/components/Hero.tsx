@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ["/hero-image-1.jpg", "/hero-image-2.jpg", "/hero-image-3.jpg", "/hero-image-4.jpg", "/hero-image-5.jpg"];
+  const images = ["/hero1.jpg","/hero-image-4.jpg", "/hero2.jpg", "/hero3.jpg", "/hero4.jpg"];
 
   useEffect(() => {
     const timer = setInterval(() => {
