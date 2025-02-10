@@ -21,26 +21,33 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/filterpixel/"
                 className="text-gray-400 hover:text-white"
+                target="_blank"
               >
                 <Facebook />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/FilterPixelHQ/"
                 className="text-gray-400 hover:text-white"
+                target="_blank"
+                
               >
                 <Twitter />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/filterpixel/?hl=en"
                 className="text-gray-400 hover:text-white"
+                target="_blank"
+
               >
                 <Instagram />
               </Link>
               <Link
-                href="#"
+                href="https://in.linkedin.com/company/filterpixel"
                 className="text-gray-400 hover:text-white"
+                target="_blank"
+
               >
                 <Linkedin />
               </Link>

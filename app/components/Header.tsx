@@ -6,7 +6,7 @@ export default function Header() {
     <header className="bg-[#323232] shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <Link
-          href="/"
+          href="www.filterpixel.com"
           className="flex items-center space-x-2"
         >
           <Image
